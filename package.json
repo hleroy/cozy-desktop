@@ -36,6 +36,7 @@
     "capture": "env-cmd .env.test babel-node ./dev/capture.js",
     "clean": "rimraf core/lib/ core/tmp/ gui/elm.js gui/app.css* gui/dist/",
     "cozy-stack": "yarn docker:exec cozy-stack",
+    "dev": "env-cmd .env.dev electron-webpack dev",
     "dev:setup": "bash ./dev/setup.sh",
     "dist": "electron-builder build",
     "dist:all": "yarn dist --x64 --ia32",
