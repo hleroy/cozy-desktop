@@ -124,7 +124,7 @@ module.exports = class WindowManager {
     this.win.loadURL(`file://${indexPath}${this.hash()}`)
 
     // devTools
-    if (process.env.WATCH === 'true' || process.env.DEBUG === 'true') {
+    if (process.env.WATCH === 'true' || process.env.DEBUG != null) {
       this.win.webContents.openDevTools({mode: 'detach'})
     }
 
