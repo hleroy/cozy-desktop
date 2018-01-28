@@ -18,7 +18,7 @@ export default class Config {
       this.reset()
     }
 
-    this.config = require(this.configPath)
+    this.config = fs.readJsonSync(this.configPath)
   }
 
   // Reset the configuration
