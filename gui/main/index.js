@@ -2,27 +2,27 @@
 
 require('babel-polyfill')
 
-const Desktop = require('../core-built/app.js').default
+const Desktop = require('../../core-built/app.js').default
 const notify = require('electron-main-notification')
 
 const debounce = require('lodash').debounce
 const path = require('path')
 
-const setupProxy = require('./js/proxy')
+const setupProxy = require('./proxy')
 
-const autoLaunch = require('./js/autolaunch')
-const lastFiles = require('./js/lastfiles')
-const tray = require('./js/tray')
-const TrayWM = require('./js/tray.window.js')
-const UpdaterWM = require('./js/updater.window.js')
-const HelpWM = require('./js/help.window.js')
-const OnboardingWM = require('./js/onboarding.window.js')
+const autoLaunch = require('./autolaunch')
+const lastFiles = require('./lastfiles')
+const tray = require('./tray')
+const TrayWM = require('./tray.window.js')
+const UpdaterWM = require('./updater.window.js')
+const HelpWM = require('./help.window.js')
+const OnboardingWM = require('./onboarding.window.js')
 
-const {selectIcon} = require('./js/fileutils')
-const {buildAppMenu} = require('./js/appmenu')
-const i18n = require('./js/i18n')
+const {selectIcon} = require('./fileutils')
+const {buildAppMenu} = require('./appmenu')
+const i18n = require('./i18n')
 const {translate} = i18n
-const {incompatibilitiesErrorMessage} = require('./js/incompatibilitiesmsg')
+const {incompatibilitiesErrorMessage} = require('./incompatibilitiesmsg')
 const {app, Menu, ipcMain, dialog} = require('electron')
 
 const log = Desktop.logger({
