@@ -1,11 +1,12 @@
 const {BrowserWindow, ipcMain, shell} = require('electron')
-const path = require('path')
 
 const ELMSTARTUP = 400
 
 const log = require('../../core-built/app.js').default.logger({
   component: 'windows'
 })
+
+// TODO: const isDevelopment = process.env.NODE_ENV !== 'production'
 
 module.exports = class WindowManager {
   constructor (app, desktop) {
@@ -120,8 +121,12 @@ module.exports = class WindowManager {
       }, ELMSTARTUP)
     })
 
-    let indexPath = path.resolve(__dirname, '..', 'index.html')
-    this.win.loadURL(`file://${indexPath}${this.hash()}`)
+    // TODO const indexUrl = isDevelopment
+    //   ? `http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`
+    //   : `file://${__dirname}/index.html`
+    const indexUrl = `http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`
+    console.log('indexUrl', indexUrl)
+    this.win.loadURL(`${indexUrl}${this.hash()}`)
 
     // devTools
     if (process.env.WATCH === 'true' || process.env.DEBUG != null) {
