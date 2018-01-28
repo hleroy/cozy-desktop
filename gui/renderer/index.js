@@ -1,5 +1,7 @@
 'use strict'
 
+require('../app.css')
+
 const electron = require('electron')
 const {ipcRenderer, remote} = electron
 
