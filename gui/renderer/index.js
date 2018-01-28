@@ -5,19 +5,20 @@ const {ipcRenderer, remote} = electron
 
 const path = remote.require('path')
 const os = require('os')
-const pkg = remote.require('../package.json')
+const pkg = remote.require('../../package.json')
 const defaultDir = path.join(os.homedir(), 'Cozy Drive')
 const container = document.getElementById('container')
 
-const Elm = require('./elm').Main
+const Elm = require('../elm').Main
 const elmectron = Elm.embed(container, {
   page: window.location.hash.replace('#', ''),
   folder: defaultDir,
   locale: remote.app.locale,
-  locales: {
-    en: remote.require('./locales/en.json'),
-    fr: remote.require('./locales/fr.json')
-  },
+  locales: {en: {}, fr: {}},
+  // FIXME: locales: {
+  //   en: remote.require('../locales/en.json'),
+  //   fr: remote.require('../locales/fr.json')
+  // },
   platform: remote.process.platform,
   version: pkg.version
 })
