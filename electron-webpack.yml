@@ -1,0 +1,4 @@
+main:
+  sourceDirectory: gui/main
+renderer:
+  sourceDirectory: gui/renderer
