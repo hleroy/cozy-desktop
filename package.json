@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/cozy-labs/cozy-desktop/issues"
   },
-  "main": "gui/main.js",
+  "main": "gui/main/index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/cozy-labs/cozy-desktop.git"
