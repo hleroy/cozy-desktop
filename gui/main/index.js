@@ -302,17 +302,18 @@ ipcMain.on('show-help', () => {
   helpWindow.show()
 })
 
+// TODO: Remove?
 // On watch mode, automatically reload the window when sources are updated
 // FIXME: Why does it reload in a new popover with onboarding inside?
-if (process.env.WATCH === 'true') {
-  const chokidar = require('chokidar')
-  chokidar.watch(['*.{html,js,css}'], { cwd: __dirname })
-    .on('change', () => {
-      if (trayWindow) {
-        trayWindow.reload()
-      }
-    })
-}
+// if (process.env.WATCH === 'true') {
+//   const chokidar = require('chokidar')
+//   chokidar.watch(['*.{html,js,css}'], { cwd: __dirname })
+//     .on('change', () => {
+//       if (trayWindow) {
+//         trayWindow.reload()
+//       }
+//     })
+// }
 
 // Network requests can be stuck with Electron on Linux inside the event loop.
 // A hack to deblock them is push some events in the event loop.
