@@ -246,11 +246,11 @@ const startSync = (force, ...args) => {
   })
 }
 
-const shouldExit = app.makeSingleInstance(() => showWindow())
-if (shouldExit) {
-  log.warn('Cozy Drive is already running. Exiting...')
-  app.exit()
-}
+// FIXME: const shouldExit = app.makeSingleInstance(() => showWindow())
+// if (shouldExit) {
+//   log.warn('Cozy Drive is already running. Exiting...')
+//   app.exit()
+// }
 
 app.on('ready', () => {
   // Once configured and running in the tray, the app doesn't need to be
