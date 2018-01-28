@@ -48,7 +48,7 @@
     "lint:eslint": "eslint './core/**/*.js' gui/main.js gui/ports.js 'gui/js/**/*.js' './test/**/*.js'",
     "mocha": "env-cmd .env.test electron-mocha",
     "mocha:coverage": "yarn mocha --require ./test/support/coverage --reporter ./test/support/istanbul_reporter",
-    "postinstall": "yarn postinstall:electron && yarn postinstall:elm",
+    "postinstallDISABLED": "yarn postinstall:electron && yarn postinstall:elm",
     "postinstall:electron": "electron-builder install-app-deps",
     "postinstall:elm": "elm-package install -y",
     "prebuild": "yarn clean",
