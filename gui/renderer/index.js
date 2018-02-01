@@ -1,6 +1,6 @@
 'use strict'
 
-require('../app.css')
+require('../styles/app.styl')
 
 const electron = require('electron')
 const {ipcRenderer, remote} = electron
@@ -11,7 +11,7 @@ const pkg = remote.require('../../package.json')
 const defaultDir = path.join(os.homedir(), 'Cozy Drive')
 const container = document.getElementById('app')
 
-const Elm = require('../elm').Main
+const Elm = require('../elm/Main.elm')
 const elmectron = Elm.embed(container, {
   page: window.location.hash.replace('#', ''),
   folder: defaultDir,

@@ -2,3 +2,4 @@ main:
   sourceDirectory: gui/main
 renderer:
   sourceDirectory: gui/renderer
+  webpackConfig: webpack.renderer.additions.js
